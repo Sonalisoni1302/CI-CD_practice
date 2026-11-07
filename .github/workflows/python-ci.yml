@@ -1,0 +1,23 @@
+
+name: My First CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+      - feature
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display message
+        run: echo "My first GitHub Actions workflow is running!"
+
+      - name: Check Python version
+        run: python --version
