@@ -13,9 +13,6 @@
 # print(f"The sum of {a} and {b} is: {add_numbers(a, b)}")
 
 def div(num1, num2):
-    if num2 == 0:
-        raise ValueError("Cannot divide by zero.")
-
     return num1 / num2
 
 
