@@ -1,5 +1,5 @@
 
-name: My First CI Workflow
+name: Python CI Pipeline
 
 on:
   push:
@@ -12,12 +12,20 @@ on:
       - main
 
 jobs:
-  hello:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Display message
-        run: echo "My first GitHub Actions workflow is running!"
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Check Python version
-        run: python --version
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install pytest
+
+      - name: Run Python tests
+        run: pytest -v

@@ -1,20 +1,36 @@
-def greet(name):
-    return f"Hello, MY NAME IS {name}, I am upcoming AI Engineer."
+# def greet(name):
+#     return f"Hello, MY NAME IS {name}, I am upcoming AI Engineer."
 
-name = input("Enter your name: ")
-print(greet(name))
+# name = input("Enter your name: ")
+# print(greet(name))
 
 
-def add_numbers(num1, num2):
-    return num1 + num2
+# def add_numbers(num1, num2):
+#     return num1 + num2
 
-a = int(input("Enter first number: "))
-b = int(input("Enter second number: "))
-print(f"The sum of {a} and {b} is: {add_numbers(a, b)}")
+# a = int(input("Enter first number: "))
+# b = int(input("Enter second number: "))
+# print(f"The sum of {a} and {b} is: {add_numbers(a, b)}")
 
 def div(num1, num2):
+    if num2 == 0:
+        raise ValueError("Cannot divide by zero.")
+
     return num1 / num2
 
-x = int(input("Enter first number for division: "))
-y = int(input("Enter second number for division: "))
-print(f"The result of dividing {x} by {y} is: {div(x, y)}")
+
+def main():
+    name = input("Enter your name: ")
+    print(f"Welcome {name}!")
+
+    x = int(input("Enter first number for division: "))
+    y = int(input("Enter second number for division: "))
+
+    try:
+        print(f"The result is: {div(x, y)}")
+    except ValueError as e:
+        print(f"Error: {e}")
+
+
+if __name__ == "__main__":
+    main()
